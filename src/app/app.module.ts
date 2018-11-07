@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //import {enableProdMode} from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +14,9 @@ import  { PostsService} from './services/Posts.service';
 import  { AuthService} from './services/auth.service';
 import { AuthComponent } from './auth/auth.component';
 import { ViewPostComponent } from './view-post/view-post.component';
+import { LoginComponent } from './login/login.component';
+import { InscriptionComponent } from './inscription/inscription.component';
+import { userService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -21,13 +26,18 @@ import { ViewPostComponent } from './view-post/view-post.component';
     PostListComponent,
     PostListItemComponent,
     AuthComponent,
-    ViewPostComponent
+    ViewPostComponent,
+    LoginComponent,
+    InscriptionComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [PostsService,AuthService],
+  providers: [PostsService,AuthService,userService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
