@@ -1,0 +1,6 @@
+<li class="list-group-item" [ngClass]="{'list-group-item-success':  compareLoveDontLove(), 'list-group-item-danger':!compareLoveDontLove()}">
+  <div>{{ post.title }} {{ post.created_at  | date:'dd/mm/yy' }}</div><br/>
+  <div>{{ post.content }}</div><br/>
+  <div><button class="btn btn-success" type="submit" (click)="addLove()">Love it</button> <button class="btn btn-danger" type="submit" (click)="addDontLove()">Don't love it</button></div>
+  <a routerLink="{{index}}">Voir le détail</a>
+</li>

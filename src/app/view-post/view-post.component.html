@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Post{{ index }}</h2>
+       <p>Titre : {{ title }} </p>
+       <p>Contenu : {{ content }}</p>
+       <button class='btn btn-success'  *ngIf="isAuth === true">Editer</button>
+       <a routerLink="/posts">Précédent</a>
+    </div>
+  </div>
+</div>
